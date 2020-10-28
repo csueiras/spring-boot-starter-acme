@@ -56,4 +56,4 @@ jobs:
         run: ./mvnw --batch-mode release:prepare -Dusername=$GITHUB_ACTOR -Dpassword=$GITHUB_TOKEN
 
       - name: Perform release and Deploy a new version to central
-        run: ./mvnw clean release:perform -B -DskipTests -DskipExamples -Prelease -Dgpg.keyname=${{secrets.GPG_KEYNAME}} -Dgpg.passphrase=${{secrets.GPG_PASSPHRASE}}
+        run: ./mvnw clean release:perform -B -DskipTests -DskipExamples -Prelease -Dgpg.keyname=${{secrets.GPG_KEYNAME}} -Dgpg.passphrase=\Q${{secrets.GPG_PASSPHRASE}}\E

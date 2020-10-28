@@ -50,6 +50,9 @@ jobs:
         with:
           servers: '[{"id": "ossrh", "username": "${{secrets.SONATYPE_USERNAME}}", "password": "${{secrets.SONATYPE_PASSWORD}}"}]'
 
+      - name: Print Repository Url
+        run: git remote -v
+
       - name: Prepare release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

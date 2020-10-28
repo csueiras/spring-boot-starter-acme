@@ -5,6 +5,7 @@ on:
       - '*/*'       # matches every branch containing a single '/'
       - '**'        # matches every branch
       - '!master'   # excludes master (this is a PR-only workflow)
+      - '!release'
 jobs:
   pr:
     name: "Pull Request Checks"

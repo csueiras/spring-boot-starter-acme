@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.4.RELEASE</version>
-        <relativePath></relativePath>
+        <relativePath/>
         <!-- lookup parent from repository -->
     </parent>
 
@@ -33,9 +34,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/csueiras/spring-boot-starter-acme.git</connection>
+        <connection>scm:git:git@github.com:csueiras/spring-boot-starter-acme.git</connection>
         <developerConnection>scm:git:git@github.com:csueiras/spring-boot-starter-acme.git</developerConnection>
-        <url>https://github.com/csueiras/spring-boot-starter-acme/tree/master</url>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
@@ -59,7 +60,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -194,6 +194,8 @@
                     <version>2.5.3</version>
                     <configuration>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>release</releaseProfiles>
                     </configuration>
                 </plugin>
             </plugins>

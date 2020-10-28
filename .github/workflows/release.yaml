@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-
+        with:
+          ref: master
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
@@ -31,6 +32,9 @@ jobs:
           git config --global committer.name "GitHub"
           git config --global author.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git config --global author.name "${GITHUB_ACTOR}"
+
+      - name: Checkout master branch
+        run: git checkout master
 
       - name: Import GPG Owner Trust
         run: echo ${{secrets.GPG_OWNERTRUST}} | base64 --decode | gpg --import-ownertrust
